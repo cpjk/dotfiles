@@ -7,6 +7,7 @@ set noerrorbells visualbell t_vb=
 :set nu
 :set numberwidth=1
 set list listchars=tab:»→,trail:␣
+:set scrolloff=10
 
 :set hlsearch
 
