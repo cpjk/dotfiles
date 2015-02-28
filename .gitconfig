@@ -1,6 +1,6 @@
 [user]
-	email = cpjkelly@gmail.com
-	name = Chris Kelly
+  email = cpjkelly@gmail.com
+  name = Chris Kelly
 [init]
   templatedir = ~/.git-template
 [alias]
