@@ -4,17 +4,20 @@ set shiftwidth=2
 set noswapfile
 set nobackup
 set noerrorbells visualbell t_vb=
-:set nu
-:set numberwidth=1
+set nu
+set numberwidth=1
 set list listchars=tab:»→,trail:␣
-:set scrolloff=10
+set scrolloff=10
 
-:set hlsearch
+" Remove timeout for switching to normal mode
+set timeoutlen=1000 ttimeoutlen=0
+
+set hlsearch
 
 " solarized theme setup
 set t_Co=256
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 
 map j gj
@@ -43,15 +46,7 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'elixir-lang/vim-elixir'
 Bundle 'slim-template/vim-slim.git'
-
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Bundle 'christoomey/vim-tmux-navigator'
 
