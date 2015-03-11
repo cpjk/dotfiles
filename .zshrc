@@ -25,6 +25,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   alias i3lock="i3lock -i ~/.i3/i3lock_image"
 fi
 
+# 10ms for key sequences
+KEYTIMEOUT=1
 
 # make chruby executable visible
 source /usr/local/share/chruby/chruby.sh
