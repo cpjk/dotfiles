@@ -7,6 +7,7 @@ export PATH=~/.gem/ruby/2.1.3/bin:$PATH
 export PATH=~/.gem/ruby/2.0.0/bin:$PATH
 export PATH=~/.gem/ruby/2.2.0/bin:$PATH
 export PATH=/usr/bin/:$PATH
+export TERMINAL=xfce4-terminal
 
 alias v=vim
 alias be="bundle exec"
@@ -15,9 +16,13 @@ alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
 alias gpo="git push origin HEAD:refs/for/master"
 alias mpss="mix phoenix.server start"
+alias mpr="mix phoenix.routes"
+alias cl="clear"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  alias chrome="google-chrome-stable &"
+  alias chrome="google-chrome-stable 2>>! ~/.log/chrome.log &"
+  alias redshift="redshift 2>>! ~/.log/redshift.log &"
+  alias i3lock="i3lock -i ~/.i3/i3lock_image"
 fi
 
 
@@ -57,6 +62,3 @@ compinit
 # virtualenv setup
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
-
-tmux
-clear
