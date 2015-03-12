@@ -7,7 +7,7 @@ export PATH=~/.gem/ruby/2.1.3/bin:$PATH
 export PATH=~/.gem/ruby/2.0.0/bin:$PATH
 export PATH=~/.gem/ruby/2.2.0/bin:$PATH
 export PATH=/usr/bin/:$PATH
-export TERMINAL=xfce4-terminal
+export TERMINAL=urxvt
 
 alias v=vim
 alias be="bundle exec"
@@ -43,7 +43,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-export TERM=screen-256color-bce
+# this line was overriding tmux setting TERM=screen, which was causing
+# the background of text in vim to be different that the rest of the background
+# export TERM=screen-256color-bce
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
