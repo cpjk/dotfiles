@@ -172,7 +172,7 @@ bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%-
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+
 
 # Bind suspend and lock to f9
-bindsym XF86Tools exec 'zsh -c systemctl suspend &; i3lock'
+# bindsym XF86Tools exec 'zsh -c systemctl suspend &; i3lock'
 
 client.focused #586e75 #586e75 #fdf6e3 #268bd2
 client.focused_inactive #073642 #073642 #93a1a1 #002b36
