@@ -8,22 +8,21 @@ set nu
 set numberwidth=1
 set list listchars=tab:»→,trail:␣
 set scrolloff=10
-
-" Remove timeout for switching to normal mode
-set timeoutlen=1000 ttimeoutlen=0
-
+set timeoutlen=1000 ttimeoutlen=0 " Remove timeout after pressing escape
 set hlsearch
 
-" solarized theme setup
+" Colorscheme configuration
 set t_Co=256
 syntax enable
 set background=dark
 colorscheme jellybeans
 
+" Treat wrapped lines like separate lines when moving in normal mode
 map j gj
 map k gk
 
-" Vundle stuff
+
+" Vundle ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -32,11 +31,9 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Plugins
+Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
@@ -45,22 +42,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Townk/vim-autoclose'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'elixir-lang/vim-elixir'
-Bundle 'slim-template/vim-slim.git'
+Bundle 'slim-template/vim-slim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+Plugin 'altercation/vim-colors-solarized'
 Bundle 'christoomey/vim-tmux-navigator'
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
