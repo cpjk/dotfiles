@@ -1,5 +1,6 @@
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export TERMINAL=urxvt
 
 export PATH=~/.gem/ruby/2.1.0/bin:$PATH
 export PATH=~/.gem/ruby/1.9.1/bin:$PATH
@@ -7,7 +8,6 @@ export PATH=~/.gem/ruby/2.1.3/bin:$PATH
 export PATH=~/.gem/ruby/2.0.0/bin:$PATH
 export PATH=~/.gem/ruby/2.2.0/bin:$PATH
 export PATH=/usr/bin/:$PATH
-export TERMINAL=urxvt
 
 alias v=vim
 alias be="bundle exec"
@@ -31,37 +31,24 @@ KEYTIMEOUT=1
 # make chruby executable visible
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# this line was overriding tmux setting TERM=screen, which was causing
-# the background of text in vim to be different that the rest of the background
-# export TERM=screen-256color-bce
-
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt extendedglob
-unsetopt beep
-bindkey -v
-# End of lines configured by zsh-newuser-install
+unsetopt beep # fuck that noise
+bindkey -v # vim-mode
 
-# The following lines were added by compinstall
+# Added by compinstall
 zstyle :compinstall filename '/home/cpjk/.zshrc'
-
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+# End compinstall
 
 # virtualenv setup
 export WORKON_HOME=~/.virtualenvs
