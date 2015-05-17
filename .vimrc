@@ -45,7 +45,7 @@ Bundle 'slim-template/vim-slim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 Bundle 'christoomey/vim-tmux-navigator'
-Plugin 'airblade/vim-gitgutter'
+Bundle 'digitaltoad/vim-jade'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
