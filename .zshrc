@@ -16,7 +16,7 @@ alias brr="bundle exec rake routes | less"
 alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
 alias gpo="git push origin HEAD:refs/for/master"
-alias mpss="mix phoenix.server start"
+alias -g mpss="mix phoenix.server start"
 alias mpr="mix phoenix.routes"
 alias cl="clear"
 
