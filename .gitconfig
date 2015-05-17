@@ -2,7 +2,7 @@
   email = cpjkelly@gmail.com
   name = Chris Kelly
 [init]
-  templatedir = ~/.git-template
+  # templatedir = ~/.git-template
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [core]
