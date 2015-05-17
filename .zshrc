@@ -1,6 +1,7 @@
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export TERMINAL=urxvt
+export NODE_PATH=/usr/lib/node_modules:$NODE_PATH
 
 export PATH=~/.gem/ruby/2.1.0/bin:$PATH
 export PATH=~/.gem/ruby/1.9.1/bin:$PATH
