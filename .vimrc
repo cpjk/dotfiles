@@ -15,7 +15,7 @@ set hlsearch
 set t_Co=256
 syntax enable
 set background=dark
-colorscheme jellybeans
+colorscheme solarized
 
 " Treat wrapped lines like separate lines when moving in normal mode
 map j gj
@@ -46,6 +46,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'digitaltoad/vim-jade'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
