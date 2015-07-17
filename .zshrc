@@ -9,6 +9,8 @@ export PATH=~/.gem/ruby/2.1.3/bin:$PATH
 export PATH=~/.gem/ruby/2.0.0/bin:$PATH
 export PATH=~/.gem/ruby/2.2.0/bin:$PATH
 export PATH=/usr/bin/:$PATH
+export PATH=~/games/psychonauts:$PATH
+fpath=( "$HOME/.zfunctions" $fpath )
 
 alias v=vim
 alias be="bundle exec"
@@ -54,3 +56,7 @@ compinit
 # virtualenv setup
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
+
+autoload -Uz promptinit
+promptinit
+prompt pure
