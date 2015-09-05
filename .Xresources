@@ -81,7 +81,7 @@ URxvt.color15:                 #fdf6e3
 URxvt.pointerBlank: true
 URxvt.scrollBar:   false
 URxvt.cursorBlink: 1
-URxvt.font:       xft:Terminus:style=Regular:size=14
+URxvt.font:       xft:Terminus:style=Regular:size=12
 URxvt.boldFont:
 URxvt.keysym.Home:  \033[1~
 URxvt.keysym.End:   \033[4~
