@@ -30,6 +30,8 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+let g:ctrlp_custom_ignore = 'node_modules/*'
+
 " Plugins
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'vim-ruby/vim-ruby'
