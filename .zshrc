@@ -13,6 +13,7 @@ export PATH=~/games/psychonauts:$PATH
 fpath=( "$HOME/.zfunctions" $fpath )
 
 alias v=vim
+alias kr="ps aux | grep redshift | grep -v grep | awk '{print $2}' | xargs kill"
 alias be="bundle exec"
 alias brr="bundle exec rake routes | less"
 alias rs="bundle exec rails server"
