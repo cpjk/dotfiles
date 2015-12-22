@@ -1,25 +1,35 @@
 set expandtab
 set softtabstop=2
 set shiftwidth=2
-set noswapfile
-set nobackup
-set noerrorbells visualbell t_vb=
-set nu
+set noswapfile " do not keep swapfiles
+
+" keep backups in the given backup directory
+set backup
+set backupdir=~/.vim-tmp
+set writebackup " write a backup before overwriting a file
+
+set noerrorbells visualbell t_vb= " disable beeping and window flashing on errors
+set nu " add line numbers
 set numberwidth=1
 set list listchars=tab:»→,trail:␣
-set scrolloff=10
-set timeoutlen=1000 ttimeoutlen=0 " Remove timeout after pressing escape
-set hlsearch
+set scrolloff=10 " scroll up or down when the cursor less than 10 lines away from the top or bottom of the window
+set timeoutlen=1000 ttimeoutlen=0 " remove timeout after pressing escape
+set hlsearch " highlight search matches
+set showcmd " show command in bottom bar
+set cursorline " highlight current line
 
 " Colorscheme configuration
-set t_Co=256
+set t_Co=256 " set the number of terminal colours
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme jellybeans
 
 " Treat wrapped lines like separate lines when moving in normal mode
 map j gj
 map k gk
+
+" restrict jsx to only .jsx files
+let g:jsx_pragma_required = 1
 
 " Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
@@ -50,6 +60,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'digitaltoad/vim-jade'
 Plugin 'tpope/vim-surround'
 Plugin 'pangloss/vim-javascript'
+Bundle 'mxw/vim-jsx'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
