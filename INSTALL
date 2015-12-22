@@ -1,0 +1,11 @@
+#!/bin/bash
+
+FILES=".gitconfig .tmux.conf .vimrc .xinitrc .Xmodmap .Xresources .zlogin .zpreztorc .zshrc"
+DOTFILE_DIR=$(pwd)
+
+for FILE in $FILES; do
+  ln -s $DOTFILE_DIR/$FILE ~/$FILE
+done
+
+mkdir ~/herp_dotfile_dir/.i3
+ln -s $DOTFILE_DIR/.i3/config ~/.i3/config
