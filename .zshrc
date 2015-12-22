@@ -1,3 +1,5 @@
+# exports
+
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export TERMINAL=urxvt
@@ -10,7 +12,12 @@ export PATH=~/.gem/ruby/2.0.0/bin:$PATH
 export PATH=~/.gem/ruby/2.2.0/bin:$PATH
 export PATH=/usr/bin/:$PATH
 export PATH=~/games/psychonauts:$PATH
+
+export ECTO_EDITOR=/usr/bin/vim # environment variable allowing `mix ecto.gen.repo` to open config/config.exs
+
 fpath=( "$HOME/.zfunctions" $fpath )
+
+# aliases
 
 alias v=vim
 alias kr="ps aux | grep redshift | grep -v grep | awk '{print $2}' | xargs kill"
@@ -19,17 +26,19 @@ alias brr="bundle exec rake routes | less"
 alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
 alias gpo="git push origin HEAD:refs/for/master"
-alias -g mpss="mix phoenix.server start"
+alias -g mps="mix phoenix.server" # inline alias for running a phoenix server in iex
 alias mpr="mix phoenix.routes"
 alias cl="clear"
 
+# linux-specific aliases
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  alias chrome="google-chrome-stable 2>>! ~/.log/chrome.log &"
-  alias redshift="redshift 2>>! ~/.log/redshift.log &"
+  alias chrome="google-chrome-stable 2>>! ~/.log/chrome.log &" # start chrome with logging to a file
+  alias redshift="redshift 2>>! ~/.log/redshift.log &" # start redshift with logging to a file
   alias i3lock="i3lock -i ~/.i3/i3lock_image"
+  alias mouseconfig="roccatkonepuremilitaryconfig" # alias for my mouse's config program
 fi
 
-# 10ms for key sequences
+# 10ms timeout for key sequences
 KEYTIMEOUT=1
 
 # make chruby executable visible
@@ -45,19 +54,20 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt extendedglob
-unsetopt beep # fuck that noise
-bindkey -v # vim-mode
+unsetopt beep # prevent terminal beeping (fuck that noise)
+bindkey -v # zsh vim-mode
+#
+# virtualenvwrapper config
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+
+# set zsh prompt
+autoload -Uz promptinit
+promptinit
+prompt pure
 
 # Added by compinstall
 zstyle :compinstall filename '/home/cpjk/.zshrc'
 autoload -Uz compinit
 compinit
 # End compinstall
-
-# virtualenv setup
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
-
-autoload -Uz promptinit
-promptinit
-prompt pure
