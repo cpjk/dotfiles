@@ -25,6 +25,5 @@ sh ~/.fehbg &
 # start nm-applet
 nm-applet &
 
-# start i3
-# !!! KEEP THIS AS THE LAST LINE
+# start i3. This should always be the last line
 exec i3 -V >> ~/.i3/logs/i3log-$(date +'%F-%k-%M-%S') 2>&1
