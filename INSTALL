@@ -7,5 +7,5 @@ for FILE in $FILES; do
   ln -s $DOTFILE_DIR/$FILE ~/$FILE
 done
 
-mkdir ~/herp_dotfile_dir/.i3
+mkdir ~/.i3
 ln -s $DOTFILE_DIR/.i3/config ~/.i3/config
