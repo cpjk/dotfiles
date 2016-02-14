@@ -70,6 +70,7 @@ Bundle 'digitaltoad/vim-jade'
 Plugin 'tpope/vim-surround'
 Plugin 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
+Plugin 'ervandew/supertab'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
