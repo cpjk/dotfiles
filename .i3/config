@@ -151,13 +151,13 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3status
   colors {
-    separator #586e75
-    background #002b36
-    statusline #aea79f
-    focused_workspace #586e75 #586e75 #ffffff
-    active_workspace #073642 #073642 #ffffff
-    inactive_workspace #002b36 #002b36 #aea79f
-    urgent_workspace #77216f #77216f #ffffff
+    separator #666666
+    background #000000
+    statusline #ffffff
+    focused_workspace #4c7899 #285577 #ffffff
+    active_workspace #333333 #5f676a #ffffff
+    inactive_workspace #333333 #222222 #888888
+    urgent_workspace #2f343a #900000 #ffffff
   }
 }
 
@@ -170,11 +170,9 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 # Bind volume keys
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%-
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+
+bindsym XF86AudioMute exec amixer -D pulse set Master Playback Switch toggle
 
-# Bind suspend and lock to f9
-# bindsym XF86Tools exec 'zsh -c systemctl suspend &; i3lock'
-
-client.focused #586e75 #586e75 #fdf6e3 #268bd2
-client.focused_inactive #073642 #073642 #93a1a1 #002b36
-client.unfocused #002b36 #002b36 #586e75 #002b36
-client.urgent #dc322f #dc322f #fdf6e3 #dc322f
+client.focused #4c7899 #285577 #ffffff #2e9ef4
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused #333333 #222222 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
