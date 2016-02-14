@@ -42,6 +42,15 @@ call vundle#begin()
 
 let g:ctrlp_custom_ignore = 'node_modules/*'
 
+" vim-tmux-navigator
+" let g:tmux_navigator_no_mappings = 1
+
+" nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
+" nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+" nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+
 " Plugins
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'vim-ruby/vim-ruby'
