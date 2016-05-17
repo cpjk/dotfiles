@@ -3,6 +3,10 @@ set softtabstop=2
 set shiftwidth=2
 set noswapfile " do not keep swapfiles
 
+" search for tags file starting from current directory and recursing down
+" parent directories until one is found
+set tags=./tags;/
+
 " keep backups in the given backup directory
 set backup
 set backupdir=~/.vim-tmp
@@ -30,6 +34,9 @@ map k gk
 
 " restrict jsx to only .jsx files
 let g:jsx_pragma_required = 1
+
+" allow ctrlp to index all files
+let g:ctrlp_max_files=0
 
 " Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
