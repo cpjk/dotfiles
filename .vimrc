@@ -3,6 +3,12 @@ set softtabstop=2
 set shiftwidth=2
 set noswapfile " do not keep swapfiles
 
+" was supposed to allow my shell to behave like and interactive shell
+":set shellcmdflag=-ic
+
+
+":set shell=zsh
+
 " search for tags file starting from current directory and recursing down
 " parent directories until one is found
 set tags=./tags;/
@@ -26,7 +32,7 @@ set cursorline " highlight current line
 set t_Co=256 " set the number of terminal colours
 syntax enable
 set background=dark
-colorscheme jellybeans
+colorscheme solarized
 
 " Treat wrapped lines like separate lines when moving in normal mode
 map j gj
@@ -37,6 +43,14 @@ let g:jsx_pragma_required = 1
 
 " allow ctrlp to index all files
 let g:ctrlp_max_files=0
+
+" add ctrlp cache_dir
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+" use ag for ctrlp
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
@@ -49,14 +63,11 @@ call vundle#begin()
 
 let g:ctrlp_custom_ignore = 'node_modules/*'
 
-" vim-tmux-navigator
-" let g:tmux_navigator_no_mappings = 1
+" Use the old vim regex engine (version 1, as opposed to version 2, which was
+" introduced in Vim 7.3.969). The Ruby syntax highlighting is significantly
+" slower with the new regex engine.
+set re=1
 
-" nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
-" nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-" nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 " Plugins
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
