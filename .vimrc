@@ -22,14 +22,17 @@ set cursorline " highlight current line
 set t_Co=256 " set the number of terminal colours
 syntax enable
 set background=dark
-colorscheme jellybeans
+colorscheme solarized
 
 " Treat wrapped lines like separate lines when moving in normal mode
 map j gj
 map k gk
 
-" restrict jsx to only .jsx files
-let g:jsx_pragma_required = 1
+" puts the caller
+nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
+
+" allow jsx in js and jsx files
+let g:jsx_pragma_required = 0
 
 " Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
@@ -41,6 +44,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 let g:ctrlp_custom_ignore = 'node_modules/*'
+
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
+
+" html tag completion
+" let g:closetag_filenames = '*.html, *.jsx'
 
 " vim-tmux-navigator
 " let g:tmux_navigator_no_mappings = 1
@@ -71,6 +79,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 Plugin 'ervandew/supertab'
+Plugin 'alvan/vim-closetag'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
