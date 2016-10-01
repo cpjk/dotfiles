@@ -52,6 +52,7 @@ URxvt.color15:                 #fdf6e3
 ! ------------------------------------------------------------------------------
 ! Solarized Light Terminal Colours
 ! ------------------------------------------------------------------------------
+
 /* URxvt.background:  #fdf6e5 */
 /* URxvt.foreground:  #647b82 */
 /* URxvt.fadeColor:   #fdf6e5 */
@@ -81,7 +82,10 @@ URxvt.color15:                 #fdf6e3
 URxvt.pointerBlank: true
 URxvt.scrollBar:   false
 URxvt.cursorBlink: 1
-URxvt.font:       xft:Terminus:style=Regular:size=12
+/* URxvt.font:       xft:Terminus:style=Regular:size=12 */
+/* URxvt.font:      xft:ttf-inconsolata-g:style=Regular:size=12:antialias=true */
+URxvt.font:      xft:Inconsolata:style=Regular:size=13:antialias=true
+URxvt.letterSpace:-1
 URxvt.boldFont:
 URxvt.keysym.Home:  \033[1~
 URxvt.keysym.End:   \033[4~
