@@ -7,5 +7,7 @@ for FILE in $FILES; do
   ln -s $DOTFILE_DIR/$FILE ~/$FILE
 done
 
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 mkdir ~/.i3
 ln -s $DOTFILE_DIR/.i3/config ~/.i3/config
