@@ -18,3 +18,5 @@
   helper = cache --timeout=3600
 [merge]
   tool = vimdiff
+[init]
+  templateDir = /home/cpjk/.git-template
