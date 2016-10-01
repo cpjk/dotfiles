@@ -35,6 +35,7 @@ alias mpr="mix phoenix.routes"
 alias cl="clear"
 alias -g setbg="feh --bg-scale"
 alias xmm="xmodmap /home/cpjk/.Xmodmap"
+alias -g mpv="mpv --ao=alsa"
 
 # linux-specific aliases
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
