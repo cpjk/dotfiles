@@ -36,6 +36,7 @@ alias cl="clear"
 alias -g setbg="feh --bg-scale"
 alias xmm="xmodmap /home/cpjk/.Xmodmap"
 alias -g mpv="mpv --ao=alsa"
+alias -g ff='$(ag . -l | fzy)'
 
 # linux-specific aliases
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
