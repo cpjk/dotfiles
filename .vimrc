@@ -32,7 +32,7 @@ map k gk
 nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 
 " allow jsx in js and jsx files
-let g:jsx_pragma_required = 0
+let g:jsx_ext_required = 0
 
 " Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
@@ -45,19 +45,8 @@ call vundle#begin()
 
 let g:ctrlp_custom_ignore = 'node_modules/*'
 
+" tag completion
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
-
-" html tag completion
-" let g:closetag_filenames = '*.html, *.jsx'
-
-" vim-tmux-navigator
-" let g:tmux_navigator_no_mappings = 1
-
-" nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
-" nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-" nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 " Plugins
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
@@ -80,6 +69,7 @@ Plugin 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 Plugin 'ervandew/supertab'
 Plugin 'alvan/vim-closetag'
+Plugin 'tpope/vim-haml'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
