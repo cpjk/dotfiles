@@ -23,4 +23,4 @@ if (( $+commands[fortune] )); then
 fi
 
 # start keychain
-eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa)
+# eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa)

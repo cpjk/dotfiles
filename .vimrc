@@ -21,7 +21,7 @@ set cursorline " highlight current line
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
 " Treat wrapped lines like separate lines when moving in normal mode
@@ -31,8 +31,38 @@ map k gk
 " puts the caller
 nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 
+" allow ctrlp to index all files
+let g:ctrlp_max_files=0
+
+" add ctrlp cache_dir
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+" use ag for ctrlp
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif"
+
 " allow jsx in js and jsx files
 let g:jsx_ext_required = 0
+
+" FZY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function! FzyCommand(choice_command, vim_command)
+  try
+    let output = system(a:choice_command . " | fzy ")
+  catch /Vim:Interrupt/
+    " Swallow errors from ^C, allow redraw! below
+  endtry
+  redraw!
+  if v:shell_error == 0 && !empty(output)
+    exec a:vim_command . ' ' . output
+  endif
+endfunction
+
+nnoremap <leader>e :call FzyCommand("ag . -l -g ''", ":e")<cr>
+nnoremap <leader>v :call FzyCommand("ag . -l -g ''", ":vs")<cr>
+nnoremap <leader>s :call FzyCommand("ag . -l -g ''", ":sp")<cr>
+
+" /FZY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
@@ -44,6 +74,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 let g:ctrlp_custom_ignore = 'node_modules/*'
+
+" Use the old vim regex engine (version 1, as opposed to version 2, which was
+" introduced in Vim 7.3.969). The Ruby syntax highlighting is significantly
+" slower with the new regex engine.
+set re=1
 
 " tag completion
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
@@ -70,6 +105,7 @@ Bundle 'mxw/vim-jsx'
 Plugin 'ervandew/supertab'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-haml'
+Bundle 'roman/golden-ratio'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
