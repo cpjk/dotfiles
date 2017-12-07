@@ -21,7 +21,7 @@ set cursorline " highlight current line
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 
 " Treat wrapped lines like separate lines when moving in normal mode
@@ -83,6 +83,9 @@ set re=1
 " tag completion
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
 
+" copy the full path to the current file to the clipboard
+let @*=expand('%:p')
+
 " Plugins
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'vim-ruby/vim-ruby'
@@ -96,6 +99,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'elixir-lang/vim-elixir'
 Bundle 'slim-template/vim-slim'
 Plugin 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rhubarb'
 Plugin 'altercation/vim-colors-solarized'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'digitaltoad/vim-jade'
