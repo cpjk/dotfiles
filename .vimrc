@@ -1,7 +1,9 @@
+autocmd FileType go setlocal noexpandtab softtabstop=4 shiftwidth=4 tabstop=4 nolist " Set tab indentation for golang
 set expandtab
 set softtabstop=2
 set shiftwidth=2
 set noswapfile " do not keep swapfiles
+set smarttab
 
 " keep backups in the given backup directory
 set backup
@@ -17,33 +19,40 @@ set timeoutlen=1000 ttimeoutlen=0 " remove timeout after pressing escape
 set hlsearch " highlight search matches
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
+hi ColorColumn ctermbg=2 guibg=lightgrey
+set colorcolumn=121 " Add a vertical stripe on line 121
+" hi ColorColumn ctermbg=lightgrey
+
+" set statusline+=%{gutentags#statusline()} " Show in status bar when gutentags is generating tags
 
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme jellybeans
 
 " Treat wrapped lines like separate lines when moving in normal mode
 map j gj
 map k gk
 
+nmap K m'a<CR><Esc>`'
 " puts the caller
 nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 
 " allow ctrlp to index all files
-let g:ctrlp_max_files=0
+" let g:ctrlp_max_files=0
 
 " add ctrlp cache_dir
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
 " use ag for ctrlp
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif"
+" if executable('ag')
+"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" endif"
 
 " allow jsx in js and jsx files
 let g:jsx_ext_required = 0
+
 
 " FZY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function! FzyCommand(choice_command, vim_command)
@@ -61,17 +70,7 @@ endfunction
 nnoremap <leader>e :call FzyCommand("ag . -l -g ''", ":e")<cr>
 nnoremap <leader>v :call FzyCommand("ag . -l -g ''", ":vs")<cr>
 nnoremap <leader>s :call FzyCommand("ag . -l -g ''", ":sp")<cr>
-
 " /FZY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-" Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
 let g:ctrlp_custom_ignore = 'node_modules/*'
 
@@ -85,6 +84,16 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
 
 " copy the full path to the current file to the clipboard
 let @*=expand('%:p')
+
+
+" Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Plugins
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
@@ -106,10 +115,13 @@ Bundle 'digitaltoad/vim-jade'
 Plugin 'tpope/vim-surround'
 Plugin 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
-Plugin 'ervandew/supertab'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-haml'
 Bundle 'roman/golden-ratio'
+Bundle 'Valloric/YouCompleteMe'
+Plugin 'jparise/vim-graphql'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'cloudhead/neovim-fuzzy'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
