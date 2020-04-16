@@ -18,7 +18,7 @@ set scrolloff=10 " scroll up or down when the cursor less than 10 lines away fro
 set timeoutlen=1000 ttimeoutlen=0 " remove timeout after pressing escape
 set hlsearch " highlight search matches
 set showcmd " show command in bottom bar
-set cursorline " highlight current line
+" set cursorline " highlight current line
 hi ColorColumn ctermbg=2 guibg=lightgrey
 set colorcolumn=121 " Add a vertical stripe on line 121
 " hi ColorColumn ctermbg=lightgrey
@@ -28,8 +28,11 @@ set colorcolumn=121 " Add a vertical stripe on line 121
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
 syntax enable
-set background=dark
-colorscheme jellybeans
+set background=light
+colorscheme solarized
+
+" Enable copying to OSX clipboard via yank commands
+set clipboard=unnamed
 
 " Treat wrapped lines like separate lines when moving in normal mode
 map j gj
@@ -103,7 +106,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Townk/vim-autoclose'
+Plugin 'Raimondi/delimitMate'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'elixir-lang/vim-elixir'
 Bundle 'slim-template/vim-slim'
