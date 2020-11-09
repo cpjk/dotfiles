@@ -70,9 +70,9 @@ function! FzyCommand(choice_command, vim_command)
   endif
 endfunction
 
-nnoremap <leader>e :call FzyCommand("ag . -l -g ''", ":e")<cr>
-nnoremap <leader>v :call FzyCommand("ag . -l -g ''", ":vs")<cr>
-nnoremap <leader>s :call FzyCommand("ag . -l -g ''", ":sp")<cr>
+nnoremap <leader>e :call FzyCommand("ag . -l -g '' --ignore '*.rbi' --ignore '*.mrb'", ":e")<cr>
+nnoremap <leader>v :call FzyCommand("ag . -l -g '' --ignore '*.rbi' --ignore '*.mrb'", ":vs")<cr>
+nnoremap <leader>s :call FzyCommand("ag . -l -g '' --ignore '*.rbi' --ignore '*.mrb'", ":sp")<cr>
 " /FZY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 let g:ctrlp_custom_ignore = 'node_modules/*'
