@@ -28,8 +28,8 @@ set colorcolumn=121 " Add a vertical stripe on line 121
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
 syntax enable
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme jellybeans
 
 " Enable copying to OSX clipboard via yank commands
 set clipboard=unnamed
@@ -53,8 +53,15 @@ nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 "   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " endif"
 
+" vim ruby customization
+:let g:ruby_indent_hanging_elements = 0
+:let g:ruby_indent_assignment_style = 'variable'
+
+
 " allow jsx in js and jsx files
 let g:jsx_ext_required = 0
+
+let g:gutentags_cache_dir = './.tags'
 
 
 " FZY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,6 +132,7 @@ Bundle 'Valloric/YouCompleteMe'
 Plugin 'jparise/vim-graphql'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'cloudhead/neovim-fuzzy'
+Plugin 'fatih/vim-go'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

@@ -41,13 +41,13 @@ alias cr='chumbawumba && dev run'
 alias dr='dev run'
 alias du='dev up'
 alias dur='dev up && dev run'
-alias dt='dev test'
+alias -g dt='dev test'
 alias drt='dev retest'
 alias dut='dev up && dev test'
 alias esrb='be rake elasticsearch:drop && be rake elasticsearch:rebuild'
 alias -g agnt='ag --ignore "*test*"'
 alias cls='printf "\33c\e[3J"'
-alias rbm='g fetch && g rebase origin/master'
+alias rbm='git pull --rebase origin master'
 alias dbt="bin/spring stop && LOG_LEVEL=debug dev test"
 alias ds='dev style --include-branch-commits'
 alias dti='dev test --include-branch-commits'
@@ -60,6 +60,7 @@ alias ga='git add'
 alias ggc='g gc --prune=now' # Prune git object tree
 alias gcb='git checkout `git branch | fzy`'
 alias gdr='git update-ref -d'
+alias dstc='ds && dev typecheck'
 
 # OS X postgres aliases
 alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
