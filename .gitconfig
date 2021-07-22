@@ -7,7 +7,7 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [core]
   editor = vim
-  excludesfile = ~/.gitignore.global
+	excludesfile = /Users/cpjk/.gitignore
 	commitGraph = true
 [color]
   ui = true
@@ -15,10 +15,14 @@
   autosetuprebase = always
 [push]
   default = simple
+[pull]
+  rebase = true
 [merge]
   tool = vimdiff
 [init]
   templateDir = /home/cpjk/.git-template
+[fetch]
+	prune = true
 [diff]
 	algorithm = patience
 [protocol]
