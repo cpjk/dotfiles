@@ -1,3 +1,10 @@
+# ctags alias to ignore ctags js null tag warnings for object destructuring (https://github.com/universal-ctags/ctags/issues/1112)
+ctags() {
+    command ctags "$@" 2> >(
+        grep -Ev "^ctags: Warning: ignoring null tag in .+\.js\(line: .+\)$"
+    )
+}
+
 # exports
 export GOPATH=$HOME
 export PATH=$GOPATH/bin:$PATH
@@ -12,6 +19,9 @@ export PATH=$ANDROID_SDK/platform-tools:$PATH
 
 # eval "$(exenv init -)"
 fpath=( "$HOME/.zfunctions" $fpath )
+
+# Add pure prompt theme
+fpath+=$HOME/.zsh/pure
 
 # 10ms timeout for key sequences
 KEYTIMEOUT=1
@@ -61,6 +71,9 @@ alias ggc='g gc --prune=now' # Prune git object tree
 alias gcb='git checkout `git branch | fzy`'
 alias gdr='git update-ref -d'
 alias dstc='ds && dev typecheck'
+alias weblogs='dev sv logs -f web'
+alias cds='dev cd shopify'
+alias gwdo='gwd origin/$(git rev-parse --abbrev-ref HEAD)'
 
 # OS X postgres aliases
 alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
@@ -75,8 +88,7 @@ unsetopt beep # prevent terminal beeping (fuck that noise)
 bindkey -v # zsh vim-mode
 
 # set zsh prompt
-autoload -Uz promptinit
-promptinit
+autoload -U promptinit; promptinit
 prompt pure
 
 # Added by compinstall
@@ -89,3 +101,4 @@ compinit
 export PRY=1
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+if [ -e /Users/cpjk/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/cpjk/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
