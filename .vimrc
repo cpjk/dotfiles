@@ -5,6 +5,11 @@ set shiftwidth=2
 set noswapfile " do not keep swapfiles
 set smarttab
 
+" Remove banner at top of netrw directory listing
+let g:netrw_banner = 0
+" Use tree-style directory listing in netrw
+let g:netrw_liststyle = 3
+
 " keep backups in the given backup directory
 set backup
 set backupdir=~/.vim-tmp
@@ -24,12 +29,28 @@ set colorcolumn=121 " Add a vertical stripe on line 121
 " hi ColorColumn ctermbg=lightgrey
 
 " set statusline+=%{gutentags#statusline()} " Show in status bar when gutentags is generating tags
+let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
+" Auto-generate tags on new
+let g:gutentags_generate_on_new = 1
+let g:gutentags_generate_on_missing = 1 " generate tags on file open if no tags file is found for current project
+let g:gutentags_generate_on_write = 1
+let g:gutentags_generate_on_empty_buffer = 0
+" Generate more info for each tag
+let g:gutentags_ctags_extra_args = [ '--tag-relative=yes', '--fields=+ailmnS' ]
+let g:gutentags_ctags_exclude = [
+      \ '.git', '.svg', '.hg', '/tests/', 'build', 'dist', 'sites//files/', 'bin', 'node_modules', 'bower_components',
+      \ 'cache', 'compiled', 'docs', 'example', 'bundle', 'vendor', '.md', '-lock.json', '.lock', 'bundle.js', 'build.js',
+      \ '.rc', '.json', '.min.', '.map', '.bak', '.zip', '.pyc', '.class', '.sln', '.Master', '.csproj', '.tmp',
+      \ '.csproj.user', '.cache', '.pdb', 'tags', 'cscope.', '.css', '.less', '.scss', '.exe', '.dll', '.mp3', '.ogg',
+      \ '.flac', '.swp', '.swo', '.bmp', '.gif', '.ico', '.jpg', '.png', '.rar', '.zip', '.tar', '.tar.gz', '.tar.xz',
+      \ '.tar.bz2', '.pdf', '.doc', '.docx', '.ppt', '.pptx',
+      \ ]
 
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
 syntax enable
-set background=dark
-colorscheme jellybeans
+set background=light
+colorscheme solarized
 
 " Enable copying to OSX clipboard via yank commands
 set clipboard=unnamed
@@ -56,13 +77,11 @@ nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 " vim ruby customization
 :let g:ruby_indent_hanging_elements = 0
 :let g:ruby_indent_assignment_style = 'variable'
+:let g:ruby_indent_block_style = 'expression'
 
 
 " allow jsx in js and jsx files
 let g:jsx_ext_required = 0
-
-let g:gutentags_cache_dir = './.tags'
-
 
 " FZY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function! FzyCommand(choice_command, vim_command)
@@ -83,11 +102,6 @@ nnoremap <leader>s :call FzyCommand("ag . -l -g '' --ignore '*.rbi' --ignore '*.
 " /FZY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 let g:ctrlp_custom_ignore = 'node_modules/*'
-
-" Use the old vim regex engine (version 1, as opposed to version 2, which was
-" introduced in Vim 7.3.969). The Ruby syntax highlighting is significantly
-" slower with the new regex engine.
-set re=1
 
 " tag completion
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
@@ -124,15 +138,14 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'digitaltoad/vim-jade'
 Plugin 'tpope/vim-surround'
 Plugin 'pangloss/vim-javascript'
-Bundle 'mxw/vim-jsx'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-haml'
 Bundle 'roman/golden-ratio'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'jparise/vim-graphql'
-Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'cloudhead/neovim-fuzzy'
 Plugin 'fatih/vim-go'
+Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
