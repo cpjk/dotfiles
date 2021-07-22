@@ -63,4 +63,4 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 # Disable spring for shopify
-export DISABLE_SPRING=1
+# export DISABLE_SPRING=1
