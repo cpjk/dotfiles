@@ -45,6 +45,7 @@ let g:gutentags_ctags_exclude = [
       \ '.flac', '.swp', '.swo', '.bmp', '.gif', '.ico', '.jpg', '.png', '.rar', '.zip', '.tar', '.tar.gz', '.tar.xz',
       \ '.tar.bz2', '.pdf', '.doc', '.docx', '.ppt', '.pptx',
       \ ]
+set tags='/Users/cpjk/.cache/vim/ctags'
 
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
@@ -107,7 +108,7 @@ let g:ctrlp_custom_ignore = 'node_modules/*'
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
 
 " copy the full path to the current file to the clipboard
-let @*=expand('%:p')
+" let @*=expand('%:p')
 
 
 " Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
