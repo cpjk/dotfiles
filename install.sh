@@ -17,3 +17,17 @@ for FILE in $VIM_COLOR_FILES; do
 done
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+if [ $SPIN ]; then
+  sudo apt-get install -y fzy
+  sudo apt-get install silversearcher-ag
+
+  # install YCM
+  yes | sudo apt install build-essential cmake vim-nox python3-dev
+  yes | sudo apt install mono-complete golang nodejs default-jdk npm
+  pushd ~/.vim/bundle/YouCompleteMe
+  python3 install.py --all
+  popd
+fi
+
+mkdir ~/.vim-tmp

@@ -29,23 +29,23 @@ set colorcolumn=121 " Add a vertical stripe on line 121
 " hi ColorColumn ctermbg=lightgrey
 
 " set statusline+=%{gutentags#statusline()} " Show in status bar when gutentags is generating tags
-let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
-" Auto-generate tags on new
-let g:gutentags_generate_on_new = 1
-let g:gutentags_generate_on_missing = 1 " generate tags on file open if no tags file is found for current project
-let g:gutentags_generate_on_write = 1
-let g:gutentags_generate_on_empty_buffer = 0
-" Generate more info for each tag
-let g:gutentags_ctags_extra_args = [ '--tag-relative=yes', '--fields=+ailmnS' ]
-let g:gutentags_ctags_exclude = [
-      \ '.git', '.svg', '.hg', '/tests/', 'build', 'dist', 'sites//files/', 'bin', 'node_modules', 'bower_components',
-      \ 'cache', 'compiled', 'docs', 'example', 'bundle', 'vendor', '.md', '-lock.json', '.lock', 'bundle.js', 'build.js',
-      \ '.rc', '.json', '.min.', '.map', '.bak', '.zip', '.pyc', '.class', '.sln', '.Master', '.csproj', '.tmp',
-      \ '.csproj.user', '.cache', '.pdb', 'tags', 'cscope.', '.css', '.less', '.scss', '.exe', '.dll', '.mp3', '.ogg',
-      \ '.flac', '.swp', '.swo', '.bmp', '.gif', '.ico', '.jpg', '.png', '.rar', '.zip', '.tar', '.tar.gz', '.tar.xz',
-      \ '.tar.bz2', '.pdf', '.doc', '.docx', '.ppt', '.pptx',
-      \ ]
-set tags='/Users/cpjk/.cache/vim/ctags'
+" let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
+" " Auto-generate tags on new
+" let g:gutentags_generate_on_new = 1
+" let g:gutentags_generate_on_missing = 1 " generate tags on file open if no tags file is found for current project
+" let g:gutentags_generate_on_write = 1
+" let g:gutentags_generate_on_empty_buffer = 0
+" " Generate more info for each tag
+" let g:gutentags_ctags_extra_args = [ '--tag-relative=yes', '--fields=+ailmnS' ]
+" let g:gutentags_ctags_exclude = [
+"       \ '.git', '.svg', '.hg', '/tests/', 'build', 'dist', 'sites//files/', 'bin', 'node_modules', 'bower_components',
+"       \ 'cache', 'compiled', 'docs', 'example', 'bundle', 'vendor', '.md', '-lock.json', '.lock', 'bundle.js', 'build.js',
+"       \ '.rc', '.json', '.min.', '.map', '.bak', '.zip', '.pyc', '.class', '.sln', '.Master', '.csproj', '.tmp',
+"       \ '.csproj.user', '.cache', '.pdb', 'tags', 'cscope.', '.css', '.less', '.scss', '.exe', '.dll', '.mp3', '.ogg',
+"       \ '.flac', '.swp', '.swo', '.bmp', '.gif', '.ico', '.jpg', '.png', '.rar', '.zip', '.tar', '.tar.gz', '.tar.xz',
+"       \ '.tar.bz2', '.pdf', '.doc', '.docx', '.ppt', '.pptx',
+"       \ ]
+" set tags='/Users/cpjk/.cache/vim/ctags'
 
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
@@ -146,7 +146,6 @@ Bundle 'Valloric/YouCompleteMe'
 Plugin 'jparise/vim-graphql'
 Plugin 'cloudhead/neovim-fuzzy'
 Plugin 'fatih/vim-go'
-Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
