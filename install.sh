@@ -16,11 +16,16 @@ for FILE in $VIM_COLOR_FILES; do
   ln -sf $DOTFILE_DIR/$FILE ~/.vim/colors/$FILE
 done
 
+mkdir ~/.vim-tmp
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+vim +BundleInstall +qall
 
 if [ $SPIN ]; then
   sudo apt-get install -y fzy
   sudo apt-get install silversearcher-ag
+
 
   # install YCM
   yes | sudo apt install build-essential cmake vim-nox python3-dev
@@ -29,5 +34,3 @@ if [ $SPIN ]; then
   python3 install.py --all
   popd
 fi
-
-mkdir ~/.vim-tmp
