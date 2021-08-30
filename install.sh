@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILES=".gitconfig .gitignore .tmux.conf .vimrc .zlogin .zprofile .zpreztorc .zshrc"
+FILES=".gitconfig .gitignore .tmux.conf .vimrc .zlogin .zprofile .zpreztorc .zshrc .inputrc"
 VIM_COLOR_FILES="jellybeans.vim solarized.vim"
 DOTFILE_DIR=$(pwd)
 
