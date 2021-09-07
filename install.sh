@@ -28,9 +28,9 @@ if [ $SPIN ]; then
 
 
   # install YCM
-  yes | sudo apt install build-essential cmake vim-nox python3-dev
-  yes | sudo apt install mono-complete golang nodejs default-jdk npm
-  pushd ~/.vim/bundle/YouCompleteMe
-  python3 install.py --all
-  popd
+  # yes | sudo apt install build-essential cmake vim-nox python3-dev
+  # yes | sudo apt install mono-complete golang nodejs default-jdk npm
+  # pushd ~/.vim/bundle/YouCompleteMe
+  # python3 install.py --all
+  # popd
 fi
