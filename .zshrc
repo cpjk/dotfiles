@@ -71,8 +71,7 @@ alias ggc='g gc --prune=now' # Prune git object tree
 alias gcb='git checkout `git branch | fzy`'
 alias gdr='git update-ref -d'
 alias dstc='ds && dev typecheck'
-alias weblogs='dev sv logs -f web'
-alias cds='dev cd shopify'
+alias cds='cd src/github.com/shopify/shopify'
 alias gwdo='gwd origin/$(git rev-parse --abbrev-ref HEAD)'
 
 # OS X postgres aliases
