@@ -24,13 +24,5 @@ vim +BundleInstall +qall
 
 if [ $SPIN ]; then
   sudo apt-get install -y fzy
-  sudo apt-get install silversearcher-ag
-
-
-  # install YCM
-  # yes | sudo apt install build-essential cmake vim-nox python3-dev
-  # yes | sudo apt install mono-complete golang nodejs default-jdk npm
-  # pushd ~/.vim/bundle/YouCompleteMe
-  # python3 install.py --all
-  # popd
+  sudo apt-get install -y silversearcher-ag
 fi
