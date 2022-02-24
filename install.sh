@@ -23,6 +23,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +BundleInstall +qall
 
 if [ $SPIN ]; then
-  sudo apt-get install -y fzy
-  sudo apt-get install -y silversearcher-ag
+  sudo apt-get install -o DPkg::Lock::Timeout=600 -y fzy
+  sudo apt-get install -o DPkg::Lock::Timeout=600 -y silversearcher-ag
 fi
