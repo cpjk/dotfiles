@@ -50,7 +50,7 @@ set colorcolumn=121 " Add a vertical stripe on line 121
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 
 " Enable copying to OSX clipboard via yank commands
