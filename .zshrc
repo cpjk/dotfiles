@@ -74,6 +74,10 @@ alias dstc='ds && dev typecheck'
 alias cds='cd ~/src/github.com/Shopify/shopify'
 alias gwdo='gwd origin/$(git rev-parse --abbrev-ref HEAD)'
 alias sps='spin shell'
+alias ggpf='dstc && dti && gpf'
+
+unalias ggl
+alias ggl='git log -10'
 
 # OS X postgres aliases
 alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
