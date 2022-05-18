@@ -75,6 +75,7 @@ alias cds='cd ~/src/github.com/Shopify/shopify'
 alias gwdo='gwd origin/$(git rev-parse --abbrev-ref HEAD)'
 alias sps='spin shell'
 alias ggpf='dstc && dti && gpf'
+alias spp='cat /etc/spin/machine/fqdn | sed "s/\\..*//"'
 
 unalias ggl
 alias ggl='git log -10'
