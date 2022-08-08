@@ -86,6 +86,16 @@ alias ggl='git log -10'
 alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
+case $(uname -s) in
+  Linux)
+      hostname -A
+    ;;
+
+  Darwin)
+      hostname -s
+    ;;
+esac
+
 
 HISTFILE=~/.histfile
 HISTSIZE=10000
