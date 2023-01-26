@@ -5,3 +5,6 @@ if status is-interactive
 end
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Add homebrew ruby to PATH
+fish_add_path /opt/homebrew/opt/ruby/bin
