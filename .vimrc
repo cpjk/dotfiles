@@ -28,8 +28,12 @@ hi ColorColumn ctermbg=2 guibg=lightgrey
 set colorcolumn=121 " Add a vertical stripe on line 121
 " hi ColorColumn ctermbg=lightgrey
 
+" #########################################
+" ### A bunch of ctags/gutentags stuff! ###
+" #########################################
 " set statusline+=%{gutentags#statusline()} " Show in status bar when gutentags is generating tags
 " let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
+"
 " " Auto-generate tags on new
 " let g:gutentags_generate_on_new = 1
 " let g:gutentags_generate_on_missing = 1 " generate tags on file open if no tags file is found for current project
@@ -46,12 +50,15 @@ set colorcolumn=121 " Add a vertical stripe on line 121
 "       \ '.tar.bz2', '.pdf', '.doc', '.docx', '.ppt', '.pptx',
 "       \ ]
 " set tags='/Users/cpjk/.cache/vim/ctags'
+" ###################################
+" ### End ctags/gutentags stuff!  ###
+" ###################################
 
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
 syntax enable
 set background=dark
-colorscheme solarized
+" colorscheme dracula
 
 " Enable copying to OSX clipboard via yank commands
 set clipboard=unnamed
@@ -117,7 +124,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins
@@ -142,10 +150,11 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-haml'
 Bundle 'roman/golden-ratio'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Plugin 'jparise/vim-graphql'
 Plugin 'cloudhead/neovim-fuzzy'
 Plugin 'fatih/vim-go'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 call vundle#end()            " required
 filetype plugin indent on    " required
