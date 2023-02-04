@@ -33,35 +33,20 @@ fi
 
 # aliases
 
+alias python=python3
 alias v=vim
 alias be="bundle exec"
 alias brr="bundle exec rake routes | less"
 alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
 alias -g mps="mix phoenix.server" # inline alias for running a phoenix server in iex
-alias mpr="mix phoenix.routes"
 alias cl="clear"
-alias chumbawumba="dev down; dev up"
 alias -g mpv="mpv --ao=alsa"
 alias -g ff='$(ag . -l | fzy)'
 alias src='source ~/.zshrc'
-alias fuckit='git push -f'
-alias cw='chumbawumba'
-alias cr='chumbawumba && dev run'
-alias dr='dev run'
-alias du='dev up'
-alias dur='dev up && dev run'
-alias -g dt='dev test'
-alias drt='dev retest'
-alias dut='dev up && dev test'
-alias esrb='be rake elasticsearch:drop && be rake elasticsearch:rebuild'
 alias -g agnt='ag --ignore "*test*"'
 alias cls='printf "\33c\e[3J"'
 alias rbm='git pull --rebase origin main'
-alias dbt="bin/spring stop && LOG_LEVEL=debug dev test"
-alias ds='dev style --include-branch-commits'
-alias dti='dev test --include-branch-commits'
-alias gpo="git push origin HEAD:refs/for/master"
 alias gca='gc --amend'
 alias gw='gws'
 alias gpsu='g push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
@@ -70,14 +55,8 @@ alias ga='git add'
 alias ggc='g gc --prune=now' # Prune git object tree
 alias gcb='git checkout `git branch | fzy`'
 alias gdr='git update-ref -d'
-alias dstc='ds && dev typecheck'
-alias cds='cd ~/src/github.com/Shopify/shopify'
-alias cdv='cd ~/src/github.com/Shopify/video'
-alias cdf='cd ~/src/github.com/Shopify/storefront-renderer'
 alias gwdo='gwd origin/$(git rev-parse --abbrev-ref HEAD)'
 alias sps='spin shell'
-alias ggpf='dstc && dti && gpf'
-alias spp='cat /etc/spin/machine/fqdn | sed "s/\\..*//"'
 
 unalias ggl
 alias ggl='git log -10'
@@ -116,10 +95,3 @@ compinit
 
 # Enable pry
 export PRY=1
-
-[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
-if [ -e /Users/cpjk/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/cpjk/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
-
-[[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
