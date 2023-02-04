@@ -22,6 +22,7 @@ if status is-interactive
 
     alias gcp='git cherry-pick --ff'
 
+    alias gr='git rebase'
     alias gra='git rebase --abort'
     alias grc='git rebase --continue'
     alias gri='git rebase --interactive'
@@ -32,6 +33,9 @@ if status is-interactive
     alias gs='git stash'
     alias gsa='git stash apply'
     alias gsp='git stash pop'
+
+    alias gp='git push'
+    alias gpf='git push --force-with-lease'
 
     # Push to branch on remote origin.
     # Create the branch on origin if it does not already exist
