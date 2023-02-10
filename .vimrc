@@ -50,8 +50,6 @@ set colorcolumn=121 " Add a vertical stripe on line 121
 " Colorscheme configuration
 set t_Co=256 " set the number of terminal colours
 syntax enable
-set background=dark
-colorscheme solarized
 
 " Enable copying to OSX clipboard via yank commands
 set clipboard=unnamed
@@ -142,12 +140,15 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-haml'
 Bundle 'roman/golden-ratio'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Plugin 'jparise/vim-graphql'
 Plugin 'cloudhead/neovim-fuzzy'
 Plugin 'fatih/vim-go'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " /Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+
+colorscheme dracula
