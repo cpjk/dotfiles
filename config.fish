@@ -41,6 +41,8 @@ if status is-interactive
     # Create the branch on origin if it does not already exist
     alias gpsu='g push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 
+    alias gco='git checkout'
+
     ####### END ALIASES #######
 end
 # Set PATH, MANPATH, etc., for Homebrew.
