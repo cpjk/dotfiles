@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FILES=".gitconfig .gitignore .tmux.conf .vimrc .zlogin .zprofile .zpreztorc .zshrc .inputrc"
-VIM_COLOR_FILES="jellybeans.vim solarized.vim"
+VIM_COLOR_FILES="jellybeans.vim solarized.vim dracula.vim"
 DOTFILE_DIR=$(pwd)
 
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
