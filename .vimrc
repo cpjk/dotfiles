@@ -140,9 +140,11 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-haml'
 Bundle 'roman/golden-ratio'
+" Bundle 'Valloric/YouCompleteMe'
 Plugin 'jparise/vim-graphql'
 Plugin 'cloudhead/neovim-fuzzy'
 Plugin 'fatih/vim-go'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 call vundle#end()            " required
 filetype plugin indent on    " required
