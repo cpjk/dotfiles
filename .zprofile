@@ -64,3 +64,5 @@ fi
 
 # Disable spring for shopify
 # export DISABLE_SPRING=1
+
+eval "$(/opt/homebrew/bin/brew shellenv)"

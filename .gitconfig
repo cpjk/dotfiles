@@ -8,7 +8,6 @@
 [core]
   editor = vim
 	excludesfile = /Users/cpjk/.gitignore
-	commitGraph = true
 [color]
   ui = true
 [branch]
@@ -23,9 +22,5 @@
   templateDir = /home/cpjk/.git-template
 [fetch]
 	prune = true
-[diff]
-	algorithm = patience
-[protocol]
-	version = 2
-[gc]
-	writeCommitGraph = true
+[include]
+	path = /Users/cpjk/.config/dev/gitconfig
