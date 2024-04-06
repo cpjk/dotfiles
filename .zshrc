@@ -16,6 +16,7 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export ECTO_EDITOR=/usr/bin/vim # environment variable allowing `mix ecto.gen.repo` to open config/config.exs
 export ANDROID_SDK=/Users/cpjk/Library/Android/sdk
 export PATH=$ANDROID_SDK/platform-tools:$PATH
+export PATH=/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH
 
 # eval "$(exenv init -)"
 fpath=( "$HOME/.zfunctions" $fpath )
