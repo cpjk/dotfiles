@@ -1,0 +1,132 @@
+// Place your key bindings in this file to override the defaults
+[
+  // ...
+  // {
+  //     "key": "ctrl+l",
+  //     "command": "workbench.action.nextEditor"
+  // },
+  // {
+  //     "key": "ctrl+h",
+  //     "command": "workbench.action.previousEditor"
+  // }
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.action.mergeAllWindowTabs"
+  },
+  {
+    "key": "cmd+.",
+    "command": "-problems.action.showQuickFixes",
+    "when": "problemFocus"
+  },
+  {
+    "key": "cmd+.",
+    "command": "-workbench.action.terminal.sendSequence",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+cmd+c",
+    "command": "copyRelativeFilePath",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "shift+alt+cmd+c",
+    "command": "-copyRelativeFilePath",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "cmd+f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "cmd+,",
+    "command": "DevTestRunner.runTestCase",
+    "when": "editorTextFocus && resourceExtname == '.rb' && resourceFilename =~ /_(test|spec).rb/ || editorTextFocus && resourceExtname =~ /.tsx?/ && resourceFilename =~ /.test.tsx?/"
+  },
+  {
+    "key": "ctrl+alt+i",
+    "command": "-DevTestRunner.runTestCase",
+    "when": "editorTextFocus && resourceExtname == '.rb' && resourceFilename =~ /_(test|spec).rb/ || editorTextFocus && resourceExtname =~ /.tsx?/ && resourceFilename =~ /.test.tsx?/"
+  },
+  {
+    "key": "shift+cmd+,",
+    "command": "DevTestRunner.runAllTests",
+    "when": "editorTextFocus && resourceExtname == '.rb' && resourceFilename =~ /_(test|spec).rb/ || editorTextFocus && resourceExtname =~ /.tsx?/ && resourceFilename =~ /.test.tsx?/"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "-DevTestRunner.runAllTests",
+    "when": "editorTextFocus && resourceExtname == '.rb' && resourceFilename =~ /_(test|spec).rb/ || editorTextFocus && resourceExtname =~ /.tsx?/ && resourceFilename =~ /.test.tsx?/"
+  },
+  {
+    "key": "cmd+m",
+    "command": "workbench.action.toggleEditorWidths"
+  },
+  {
+    "key": "cmd+f",
+    "command": "editor.action.formatDocument.none",
+    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-editor.action.formatDocument.none",
+    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+  },
+  {
+    "key": "cmd+u",
+    "command": "workbench.action.closePanel"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+,",
+    "command": "-workbench.action.openSettings"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+cmd+left",
+    "command": "-workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+cmd+right",
+    "command": "-workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  }
+]

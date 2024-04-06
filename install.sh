@@ -22,6 +22,10 @@ done
 
 mkdir ~/.vim-tmp
 
+# VSCode configs
+ln -sf $DOTFILE_DIR/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -sf $DOTFILE_DIR/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 vim +BundleInstall +qall
