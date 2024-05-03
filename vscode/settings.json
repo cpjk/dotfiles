@@ -79,5 +79,9 @@
   "accessibility.signals.sounds.volume": 0,
   "accessibility.signals.diffLineDeleted": {
     "sound": "off"
-  }
+  },
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.value": 1
 }
