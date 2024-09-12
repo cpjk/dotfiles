@@ -126,3 +126,9 @@ if [ -e /Users/cpjk/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/cpjk/.nix
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
 
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
+export PATH="/opt/homebrew/opt/shopify-imagemagick@6/bin:$PATH"
+
+# cloudplatform: add Shopify clusters to your local kubernetes config
+export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/cpjk/.kube/config:/Users/cpjk/.kube/config.shopify.cloudplatform
+for file in /Users/cpjk/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
+kubectl-short-aliases

@@ -151,5 +151,5 @@ filetype plugin indent on    " required
 
 " /Vundle ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
-:silent! colorscheme solarized
+:silent! colorscheme dracula
 set background=light
