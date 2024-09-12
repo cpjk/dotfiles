@@ -1,87 +1,115 @@
 {
-  "ruby.useLanguageServer": true, // use the internal language server (see below)
-  "ruby.useBundler": true, //run non-lint commands with bundle exec
-  "ruby.lint": {
-    "rubocop": {
-      "useBundler": true // enable rubocop via bundler
-    },
-    // "reek": {
-    //   "useBundler": true // enable reek via bundler
-    // }
-  },
-  "ruby.format": "rubocop", // use rubocop for formatting
-  "vim.useSystemClipboard": true,
-  "editor.rulers": [
-    120
-  ],
-  "editor.tabSize": 2,
-  "[ruby]": {
-    // "editor.formatOnSave": true,
+    "vim.useSystemClipboard": true,
+    "editor.rulers": [
+        120
+    ],
     "editor.tabSize": 2,
-    "editor.insertSpaces": true,
-    "editor.semanticHighlighting.enabled": true,
-    "editor.defaultFormatter": "rebornix.ruby"
-  },
-  // "rubyLsp.enabledFeatures": {
-  //   "editor.formatOnSave": true,
-  //   "documentSymbols": true,
-  //   "foldingRanges": true,
-  //   "selectionRanges": true,
-  //   "semanticHighlighting": true,
-  //   "formatting": true,
-  //   "diagnostics": true,
-  //   "codeActions": true
-  // },
-  // "editor.formatOnSave": true,
-  // "editor.formatOnSaveMode": "modificationsIfAvailable",
-  "editor.glyphMargin": false,
-  "editor.folding": false,
-  "search.exclude": {
-    "**/*.rbi": true,
-    "**/*.svg": true,
-    "**/*.jpg": true,
-    "**/test/**/*.graphql": true
-  },
-  "editor.minimap.enabled": false,
-  "editor.fontFamily": "Inconsolata, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 15,
-  "editor.fontWeight": "600",
-  "workbench.startupEditor": "none",
-  "workbench.editor.scrollToSwitchTabs": true,
-  "zenMode.hideLineNumbers": false,
-  "editor.scrollbar.verticalScrollbarSize": 5,
-  "editor.scrollbar.horizontalScrollbarSize": 5,
-  "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 1,
-  "workbench.editor.limit.enabled": true,
-  "workbench.editor.sharedViewState": true,
-  "zenMode.fullScreen": false,
-  "editor.formatOnType": true,
-  "editor.inlineSuggest.enabled": true,
-  // "byesig.fold": false,
-  // "byesig.enabled": true,
-  // "byesig.showIcon": false,
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "byesig.opacity": 0.5,
-  "terminal.integrated.fontSize": 17,
-  "workbench.editor.enablePreviewFromQuickOpen": true,
-  "workbench.editor.enablePreviewFromCodeNavigation": true,
-  "editor.suggest.preview": true,
-  "workbench.colorTheme": "Dracula",
-  "zenMode.centerLayout": false,
-  "zenMode.hideStatusBar": false,
-  "github.copilot.inlineSuggest.enable": true,
-  "workbench.editor.empty.hint": "hidden",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "accessibility.signals.sounds.volume": 0,
-  "accessibility.signals.diffLineDeleted": {
-    "sound": "off"
-  },
-  "workbench.editor.revealIfOpen": true,
-  "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 1
+    "[ruby]": {
+        "editor.defaultFormatter": "Shopify.ruby-lsp",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.semanticHighlighting.enabled": true
+    },
+    "rubyLsp.enabledFeatures": {
+        "documentSymbols": true,
+        "foldingRanges": true,
+        "selectionRanges": true,
+        "semanticHighlighting": true,
+        "formatting": true,
+        "diagnostics": true,
+        "codeActions": true
+    },
+    "editor.formatOnSaveMode": "file",
+    "editor.glyphMargin": false,
+    "editor.folding": false,
+    "search.exclude": {
+        "**/*.rbi": true,
+        "**/*.svg": true,
+        "**/*.jpg": true,
+        "**/test/**/*.graphql": true
+    },
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Solarized Light",
+    "editor.fontFamily": "Inconsolata, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 15,
+    "editor.fontWeight": "600",
+    "workbench.startupEditor": "none",
+    "workbench.editor.scrollToSwitchTabs": true,
+    "zenMode.hideLineNumbers": false,
+    "editor.scrollbar.verticalScrollbarSize": 5,
+    "editor.scrollbar.horizontalScrollbarSize": 5,
+    "zenMode.hideStatusBar": false,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.value": 1,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.sharedViewState": true,
+    "zenMode.fullScreen": false,
+    "editor.formatOnType": true,
+    "editor.inlineSuggest.enabled": true,
+    "byesig.fold": false,
+    "byesig.enabled": true,
+    "byesig.showIcon": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "byesig.opacity": 0.5,
+    "terminal.integrated.fontSize": 17,
+    "shopifyGlobal.mysqlEditor": "external",
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "editor.suggest.preview": true,
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.persistentSessionScrollback": 9000,
+    "workbench.editor.empty.hint": "hidden",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "vscode-neovim.neovimPath": "/opt/homebrew/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.win32": "/usr/local/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.linux": "~/.init.vim",
+    "vscode-neovim.neovimInitVimPaths.darwin": "~/.init.vim",
+    "remote.SSH.connectTimeout": 150,
+    "accessibility.signals.diffLineDeleted": {
+        "sound": "off"
+    },
+    "workbench.editor.revealIfOpen": true,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<C-w>",
+                "v"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": [
+                "<C-w>",
+                "s"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        }
+    ],
+    "cursor.cpp.disabledLanguages": [
+        "plaintext",
+        "markdown",
+        "scminput"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    }
 }
