@@ -47,8 +47,8 @@ keybind = ctrl+j=goto_split:down
 keybind = ctrl+k=goto_split:up
 keybind = ctrl+l=goto_split:right
 
-keybind = ctrl+w>s=new_split:down
-keybind = ctrl+w>v=new_split:right
+keybind = ctrl+b>s=new_split:down
+keybind = ctrl+b>v=new_split:right
 
 theme="Builtin Solarized Dark"
 
