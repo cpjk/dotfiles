@@ -16,6 +16,7 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export ECTO_EDITOR=/usr/bin/vim # environment variable allowing `mix ecto.gen.repo` to open config/config.exs
 export ANDROID_SDK=/Users/cpjk/Library/Android/sdk
 export PATH=$ANDROID_SDK/platform-tools:$PATH
+export XDG_CONFIG_HOME=/Users/cpjk/.config
 
 # eval "$(exenv init -)"
 fpath=( "$HOME/.zfunctions" $fpath )
@@ -29,6 +30,14 @@ KEYTIMEOUT=1
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    # Custom: do'nt source init.zsh if the shell session is running in the context of claude code
+    # See https://github.com/anthropics/claude-code/issues/783
+    if [[ -z "${CLAUDECODE}" ]]; then
+          source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    fi
 fi
 
 # aliases
@@ -58,7 +67,6 @@ alias esrb='be rake elasticsearch:drop && be rake elasticsearch:rebuild'
 alias -g agnt='ag --ignore "*test*"'
 alias cls='printf "\33c\e[3J"'
 alias rbm='git pull --rebase origin main'
-alias dbt="bin/spring stop && LOG_LEVEL=debug dev test"
 alias ds='dev style --include-branch-commits'
 alias dti='dev test --include-branch-commits'
 alias gpo="git push origin HEAD:refs/for/master"
@@ -78,6 +86,7 @@ alias gwdo='gwd origin/$(git rev-parse --abbrev-ref HEAD)'
 alias sps='spin shell'
 alias ggpf='dstc && dti && gpf'
 alias spp='cat /etc/spin/machine/fqdn | sed "s/\\..*//"'
+alias duf='dev up && dev flink'
 
 unalias ggl
 alias ggl='git log -10'
