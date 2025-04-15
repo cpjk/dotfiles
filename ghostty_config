@@ -42,15 +42,13 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:down
-keybind = ctrl+k=goto_split:up
-keybind = ctrl+l=goto_split:right
+# keybind = ctrl+h=goto_split:left
+# keybind = ctrl+j=goto_split:down
+# keybind = ctrl+k=goto_split:up
+# keybind = ctrl+l=goto_split:right
 
-keybind = ctrl+b>s=new_split:down
-keybind = ctrl+b>v=new_split:right
+# keybind = ctrl+b>s=new_split:down
+# keybind = ctrl+b>v=new_split:right
 
-theme="Builtin Solarized Dark"
-
-
+theme="Builtin Solarized Light"
 
